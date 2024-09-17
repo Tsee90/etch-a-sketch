@@ -12,6 +12,9 @@ function makeGrid(boxNum){
         box.classList.add('box-grid');
         box.style.width = boxWidth + '%';
         mainContainer.appendChild(box);
+        box.addEventListener('mouseover', () => {
+            box.style.backgroundColor = "#45a049";    
+        });
     }
 }
-makeGrid(64);
+makeGrid(16);
