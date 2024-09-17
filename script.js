@@ -1,7 +1,11 @@
 const mainContainer = document.querySelector('.main-container');
 const DEFAULT_NUM = 16;
+let currentNum = 16;
 
 function makeGrid(boxNum){
+    //Update current number selection for clearGrid() use
+    currentNum = boxNum;
+
     //Removes previous grid
     const boxList = document.querySelectorAll('.box-grid');
     boxList.forEach(div => div.remove());
@@ -42,6 +46,13 @@ const setButton = document.querySelector('.set-number');
 setButton.addEventListener('click', () => {
     makeGrid(parseInt(prompt("Please enter number of squares in row \(1-100\): ")));
 });
+
+const clearButton = document.querySelector('.clear');
+clearButton.addEventListener('click', () => clearGrid());
+
+function clearGrid(){
+    makeGrid(currentNum);
+}
 
 function getRandomColor() {
     let letters = '0123456789ABCDEF';
