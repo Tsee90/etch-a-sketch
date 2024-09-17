@@ -26,7 +26,13 @@ function makeGrid(boxNum){
         box.style.width = boxWidth + '%';
         mainContainer.appendChild(box);
         box.addEventListener('mouseover', () => {
-            box.style.backgroundColor = "black";    
+            //Checks opacity and ups by 10% if not yet 100%
+            let currentOpacity = parseFloat(window.getComputedStyle(box).opacity);
+            if (currentOpacity < 1) {
+                currentOpacity += 0.1;
+                box.style.opacity = currentOpacity.toFixed(1);
+            }
+            box.style.backgroundColor = getRandomColor();    
         });
     }
 }
@@ -36,5 +42,14 @@ const setButton = document.querySelector('.set-number');
 setButton.addEventListener('click', () => {
     makeGrid(parseInt(prompt("Please enter number of squares in row \(1-100\): ")));
 });
+
+function getRandomColor() {
+    let letters = '0123456789ABCDEF';
+    let color = '#';
+    for (let i = 0; i < 6; i++) {
+      color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+  }
 
 makeGrid(DEFAULT_NUM);

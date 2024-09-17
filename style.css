@@ -7,19 +7,22 @@ body {
     align-items: center;
     gap: 20px;
 }
+
 .main-container {
     height: 800px;
     width: 800px;
     margin: auto;
-    background-color: blue;
+    background-color: white;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
 }
+
 .box-grid {
     box-sizing: border-box;
     border: 1px solid black;
     background-color: white;
+    opacity: 0;
     
 }
 
