@@ -5,6 +5,7 @@ html, body {
 .main-container {
     height: 800px;
     width: 800px;
+    margin: auto;
     background-color: white;
     display: flex;
     flex-direction: row;
