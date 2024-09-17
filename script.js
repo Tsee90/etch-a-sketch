@@ -1,5 +1,5 @@
 const mainContainer = document.querySelector('.main-container');
-
+const DEFAULT_NUM = 16;
 
 function makeGrid(boxNum){
     //Removes previous grid
@@ -11,9 +11,9 @@ function makeGrid(boxNum){
     if(boxNum > 100){
         boxNum = 100;
     }else if(boxNum < 1) {
-        boxNum = 1;
-    }else if (typeof boxNum !== 'number'){
-        boxNum = 16;
+        boxNum = DEFAULT_NUM;
+    }else if (isNaN(boxNum)){
+        boxNum = DEFAULT_NUM;
     }
 
     //Get percentage of total width per box to fill main-container evenly
@@ -34,7 +34,7 @@ function makeGrid(boxNum){
 //Allows user to set number of grid squares 
 const setButton = document.querySelector('.set-number');
 setButton.addEventListener('click', () => {
-    makeGrid(parseInt(prompt("Please enter number of squares in row: ")));
+    makeGrid(parseInt(prompt("Please enter number of squares in row \(1-100\): ")));
 });
 
-makeGrid(16);
+makeGrid(DEFAULT_NUM);
