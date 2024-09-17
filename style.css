@@ -1,0 +1,10 @@
+.main-container {
+    margin: auto;
+    padding: 0;
+    height: 800px;
+    width: 800px;
+    border-style: solid;
+    border-color: red;
+    display: flex;
+    
+}
